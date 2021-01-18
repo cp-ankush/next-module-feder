@@ -1,6 +1,6 @@
 const {
   withModuleFederation,
-  MergeRuntime,
+  MergeRuntime
 } = require("@module-federation/nextjs-mf");
 const path = require("path");
 
@@ -18,10 +18,10 @@ module.exports = {
               __dirname,
               "../home/.next/server/static/runtime/remoteEntry.js"
             )
-          : "home", // for client, treat it as a global
+          : "home" // for client, treat it as a global
       },
       exposes: {},
-      shared: [],
+      shared: []
     };
 
     // Configures ModuleFederation and other Webpack properties
@@ -34,5 +34,5 @@ module.exports = {
     config.plugins.push(new MergeRuntime());
 
     return config;
-  },
+  }
 };
