@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"cd home; yarn dev \" \"cd pdp; yarn dev\"",
+    "build": "concurrently \"cd home; yarn add jimp encoding probe-image-size @module-federation/nextjs-mf --save && yarn build\" \"cd pdp; yarn add jimp encoding probe-image-size @module-federation/nextjs-mf --save && yarn build\"",
+    "serve": "concurrently \"cd home; yarn start\" \"cd pdp; yarn start\"",
+    "postinstall": "concurrently \"cd home; yarn\" \"cd pdp; yarn\""
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "devDependencies": {
+    "lerna": "3.22.1"
+  }
+}
